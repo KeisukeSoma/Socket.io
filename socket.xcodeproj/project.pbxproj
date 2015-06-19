@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		589D74069405337CFECD41CF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE712EDB16D3B679BDB755CA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D1876BC91B25575000DFE63D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1876BC81B25575000DFE63D /* AppDelegate.swift */; };
 		D1876BCC1B25575000DFE63D /* socket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1876BCA1B25575000DFE63D /* socket.xcdatamodeld */; };
 		D1876BCE1B25575000DFE63D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1876BCD1B25575000DFE63D /* ViewController.swift */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8903CF04FDB824864BFE2346 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B56DC4AF9E1E443C6969CAF8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D1876BC31B25575000DFE63D /* socket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1876BC71B25575000DFE63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1876BC81B25575000DFE63D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		D1876BDB1B25575000DFE63D /* socketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = socketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1876BE01B25575000DFE63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1876BE11B25575000DFE63D /* socketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = socketTests.swift; sourceTree = "<group>"; };
+		DE712EDB16D3B679BDB755CA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589D74069405337CFECD41CF /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +63,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85FFBEB075207DF100F199FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B56DC4AF9E1E443C6969CAF8 /* Pods.debug.xcconfig */,
+				8903CF04FDB824864BFE2346 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BFBF3362554B2177149C96E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE712EDB16D3B679BDB755CA /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D1876BBA1B25574F00DFE63D = {
 			isa = PBXGroup;
 			children = (
 				D1876BC51B25575000DFE63D /* socket */,
 				D1876BDE1B25575000DFE63D /* socketTests */,
 				D1876BC41B25575000DFE63D /* Products */,
+				BFBF3362554B2177149C96E1 /* Frameworks */,
+				85FFBEB075207DF100F199FD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1876BE51B25575000DFE63D /* Build configuration list for PBXNativeTarget "socket" */;
 			buildPhases = (
+				A33767BA09F3D0EF1C4A9F4C /* Check Pods Manifest.lock */,
 				D1876BBF1B25574F00DFE63D /* Sources */,
 				D1876BC01B25574F00DFE63D /* Frameworks */,
 				D1876BC11B25574F00DFE63D /* Resources */,
+				29B03AC8C38A5C1DFC2C066D /* Embed Pods Frameworks */,
+				EB440F99276719DA88804A86 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +236,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29B03AC8C38A5C1DFC2C066D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A33767BA09F3D0EF1C4A9F4C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB440F99276719DA88804A86 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1876BBF1B25574F00DFE63D /* Sources */ = {
@@ -295,11 +370,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -333,8 +409,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -342,6 +419,7 @@
 		};
 		D1876BE61B25575000DFE63D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B56DC4AF9E1E443C6969CAF8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = socket/Info.plist;
@@ -352,6 +430,7 @@
 		};
 		D1876BE71B25575000DFE63D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8903CF04FDB824864BFE2346 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = socket/Info.plist;
@@ -362,6 +441,7 @@
 		};
 		D1876BE91B25575000DFE63D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B56DC4AF9E1E443C6969CAF8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -381,6 +461,7 @@
 		};
 		D1876BEA1B25575000DFE63D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8903CF04FDB824864BFE2346 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -413,6 +494,7 @@
 				D1876BE71B25575000DFE63D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1876BE81B25575000DFE63D /* Build configuration list for PBXNativeTarget "socketTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +503,7 @@
 				D1876BEA1B25575000DFE63D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
